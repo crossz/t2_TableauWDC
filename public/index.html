@@ -7,12 +7,18 @@
     </head>
 
     <body>
-        <h2 class="header"> Import Data Into Tableau Dashboard
-            <div>
-                <button type="button" id="submitButton" class="btn btn-success" style="margin: 10px;">Get the data</button>
+        <header>
+            <h2 class="header"> Import Data Into Tableau Dashboard </h2> 
+        </header>
+        
+        <main class = "userInput">
+            <div id = "timeInputField">
+                <div style = "font-size: 16px";>Start —— End Date</div>
+                <input type="date" id="startDate">
+                <input type="date" id="endDate">
+                <div id = "button"> <button type="button" id="submitButton">Get the data</button></div>
             </div>
-        </h2> 
-
+        </main>
         <!-- These are the JavaScript and CSS file-->>
         <link rel="stylesheet" href = style.css>
         <script src="./app.js"></script>
