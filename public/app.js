@@ -31,11 +31,11 @@
                 tableData = [];
             
             // Iterate over the JSON object
-            for (var i = 0 ; i < 10; i++) {
+            for (var i = 0 ; i < table.length; i++) {
                 tableData.push({
-                    "batch_id": table.batch_id[i],
-                    "id": table.id[i],
-                    "Operation": table.Operation[i],
+                    "batch_id": batch_id[i],
+                    "id": id[i],
+                    "Operation": Operation[i],
                 });
             }
 
