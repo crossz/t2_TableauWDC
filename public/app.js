@@ -50,7 +50,7 @@
     $(document).ready(function() {
         $("#submitButton").click(function() {
             console.log("Hi");
-            tableau.connectionName = "USGS Earthquake Feed"; // This will be the data source name in Tableau
+            tableau.connectionName = "Peter Testing"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
             
         });
