@@ -29,13 +29,13 @@
         $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
             var table = resp.table,
                 tableData = [];
-            console.log(resp)
+            
             // Iterate over the JSON object
-            for (var i = 0, len = feat.length; i < len; i++) {
+            for (var i = 0, len = table.length; i < len; i++) {
                 tableData.push({
-                    "batch_id": batch_id[i],
-                    "id": id[i],
-                    "Operation": Operation[i],
+                    "batch_id": table.batch_id[i],
+                    "id": table.id[i],
+                    "Operation": table.Operation[i],
                 });
             }
 
