@@ -5,19 +5,22 @@
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
-            id: "batch_id",
-            dataType: tableau.dataTypeEnum.int
+            id: "Master_Lab_ID",
+            dataType: tableau.dataTypeEnum.string
         }, {
-            id: "id",
-            dataType: tableau.dataTypeEnum.int
+            id: "approval_time",
+            dataType: tableau.dataTypeEnum.datetime
         }, {
-            id: "Operation",
-            dataType: tableau.dataTypeEnum.int
+            id: "is_qPCR",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "is_repeat",
+            dataType: tableau.dataTypeEnum.string
         }];
 
         var tableSchema = {
-            id: "earthquakeFeed",
-            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
+            id: "qPCRRepeatCaseSchema",
+            alias: "Schemafor qPCR Repeat Case Dashboard",
             columns: cols
         };
 
@@ -33,9 +36,10 @@
             // Iterate over the JSON object
             for (var i = 0 ; i < dataSourceTable.length; i++) {
                 tableData.push({
-                    "batch_id": dataSourceTable[i]["batch_id"],
-                    "id": dataSourceTable[i]["id"],
-                    "Operation": dataSourceTable[i]["Operation"]
+                    "Master_Lab_ID": dataSourceTable[i]["Master_Lab_ID"],
+                    "approval_time": dataSourceTable[i]["approval_time"],
+                    "is_qPCR": dataSourceTable[i]["is_qPCR"],
+                    "is_repeat": dataSourceTable[i]["is_repeat"]
                 });
             }
 
