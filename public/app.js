@@ -31,7 +31,7 @@
                 tableData = [];
             
             // Iterate over the JSON object
-            for (var i = 0, len = table.length; i < len; i++) {
+            for (var i = 0 ; i < 10; i++) {
                 tableData.push({
                     "batch_id": table.batch_id[i],
                     "id": table.id[i],
