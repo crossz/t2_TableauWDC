@@ -50,13 +50,12 @@
             table.appendRows(tableDate);
             doneCallback();
         });
-
     };
-
 
     /* 註冊Connector 物件 */  
     tableau.registerConnector(myConnector);
 })();
+
 
 /* 將Connector物件與Submit按鈕勾取(hook up)在一起
     當Submit按鈕被點擊時，調用getData function*/
@@ -66,7 +65,9 @@ document.querySelector("#submitButton").addEventListener('click', getData)
     初始化Connector 物件，並連接tableau desktop*/
 function getData() {
     // 連接器在tableau裏的名字
+    console.log("Hi");
     tableau.connectionName = "USGS Earthquake Feed";
-    tableau.submit()
+    tableau.submit();
+
     
 }
