@@ -33,9 +33,9 @@
             // Iterate over the JSON object
             for (var i = 0 ; i < table.length; i++) {
                 tableData.push({
-                    "batch_id": batch_id[i],
-                    "id": id[i],
-                    "Operation": Operation[i],
+                    "batch_id": table[i].batch_id,
+                    "id": table[i].id,
+                    "Operation": table[i].Operation,
                 });
             }
 
