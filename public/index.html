@@ -1,30 +1,23 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-        <title> Home Page: LIMS Dashboard Data </title>
+<head>
+    <title>USGS Earthquake Feed</title>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+</head>
 
-    <!-- These are the JavaScript and CSS file-->
-        <link href = "style.css" rel="stylesheet">
-        <script src="./app.js"></script>
-
-    <!--Import package: jQuery, tableauwdc-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
-        <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
-    </head>
-
-    <body>
-        <header>
-            <h2 class="header"> Import Data Into Tableau Dashboard </h2> 
-        </header>
-        
-        <main class = "userInput">
-            <div id = "button"> <button type="button" id="submitButton">Get Data!</button></div>
-        </main>
-
-
-
-        
-    </body>
+<body>
+    <div class="container container-table">
+        <div class="row vertical-center-row">
+            <div class="text-center col-md-4 col-md-offset-4">
+                <button type = "button" id = "submitButton" class = "btn btn-success" style = "margin: 10px;">Get Earthquake Data!</button>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

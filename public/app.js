@@ -1,73 +1,62 @@
-/* 建立 Connector 物件 
-   文檔請看：https://tableau.github.io/webdataconnector/docs/wdc_tutorial.html
-*/
-
-(function () {
+(function() {
+    // Create the connector object
     var myConnector = tableau.makeConnector();
 
-    /* 設定Api的JSON Schema */
-    myConnector.getSchema = function (schemaCallback) {
-        // 定義每一個數據的title
-        const qPCRRepeatCase = [
-            {
-                id: "batch_id",
-                dataType: tableau.dataTypeEnum.int
-            },
-            {
-                id: "id",
-                dataType: tableau.dataTypeEnum.int
-            },
-            {
-                id: "Operation",
-                dataType: tableau.dataTypeEnum.string
-            },
-        ];
+    // Define the schema
+    myConnector.getSchema = function(schemaCallback) {
+        var cols = [{
+            id: "id",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "mag",
+            alias: "magnitude",
+            dataType: tableau.dataTypeEnum.float
+        }, {
+            id: "title",
+            alias: "title",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "location",
+            dataType: tableau.dataTypeEnum.geometry
+        }];
 
-        // 設定Json Schema 的名字
-        let qPCRRepeatCaseSchema = {
-            id: "data_qPCRRepeatCase",
-            alis: "Data for qPCR Repeat Case Dashboard",
-            columns: qPCRRepeatCase,
+        var tableSchema = {
+            id: "earthquakeFeed",
+            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
+            columns: cols
         };
 
-        schemaCallback([qPCRRepeatCaseSchema])
+        schemaCallback([tableSchema]);
     };
 
-    /* 從Api取得JSON數據 */
-    myConnector.getData = function (table, doneCallback) {
-        let tableDate = []
-        var i = 0
+    // Download the data
+    myConnector.getData = function(table, doneCallback) {
+        $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
+            var feat = resp.features,
+                tableData = [];
 
-        // 用jquery Api request 
-        $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
-            for (i = 0, len = resp.length; i < len; i++) {
+            // Iterate over the JSON object
+            for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "batch_id": resp[i].batch_id,
-                    "id": resp[i].properties.id,
-                    "Operation": resp[i].properties.Operation,
+                    "id": feat[i].id,
+                    "mag": feat[i].properties.mag,
+                    "title": feat[i].properties.title,
+                    "location": feat[i].geometry
                 });
             }
-            table.appendRows(tableDate);
+
+            table.appendRows(tableData);
             doneCallback();
         });
     };
 
-    /* 註冊Connector 物件 */  
     tableau.registerConnector(myConnector);
+
+    // Create event listeners for when the user submits the form
+    $(document).ready(function() {
+        $("#submitButton").click(function() {
+            tableau.connectionName = "USGS Earthquake Feed"; // This will be the data source name in Tableau
+            tableau.submit(); // This sends the connector object to Tableau
+        });
+    });
 })();
-
-
-/* 將Connector物件與Submit按鈕勾取(hook up)在一起
-    當Submit按鈕被點擊時，調用getData function*/
-document.querySelector("#submitButton").addEventListener('click', getData)
-
-/* getData function
-    初始化Connector 物件，並連接tableau desktop*/
-function getData() {
-    // 連接器在tableau裏的名字
-    console.log("Hi");
-    tableau.connectionName = "USGS Earthquake Feed";
-    tableau.submit();
-
-    
-}
