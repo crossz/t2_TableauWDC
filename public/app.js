@@ -33,9 +33,9 @@
             // Iterate over the JSON object
             for (var i = 0 ; i < table.length; i++) {
                 tableData.push({
-                    "batch_id": table[i].batch_id,
-                    "id": table[i].id,
-                    "Operation": table[i].Operation,
+                    "batch_id": table[i]["batch_id"],
+                    "id": table[i]["id"],
+                    "Operation": table[i]["Operation"]
                 });
             }
 
@@ -50,7 +50,7 @@
     $(document).ready(function() {
         $("#submitButton").click(function() {
             console.log("It is working!");
-            tableau.connectionName = "Peter Testing"; // This will be the data source name in Tableau
+            tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });
