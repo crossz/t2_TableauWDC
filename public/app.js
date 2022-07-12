@@ -30,8 +30,7 @@
             var table = resp.table,
                 tableData = [],
                 length = table.length;
-            console log(length)
-            console log(resp);
+            console log(length);
             console log("respon is okay")
             console log(table);
             
