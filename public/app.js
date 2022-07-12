@@ -12,7 +12,7 @@
             dataType: tableau.dataTypeEnum.int
         }, {
             id: "Operation",
-            dataType: tableau.dataTypeEnum.string
+            dataType: tableau.dataTypeEnum.int
         }];
 
         var tableSchema = {
