@@ -28,10 +28,13 @@
     myConnector.getData = function(table, doneCallback) {
         $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
             var table = resp.table,
-                tableData = [];
+                tableData = [],
+                length = table.length;
+            console log(length)
             console log(resp);
             console log("respon is okay")
             console log(table);
+            
             // Iterate over the JSON object
             for (var i = 0, len = table.length; i < len; i++) {
                 tableData.push({
