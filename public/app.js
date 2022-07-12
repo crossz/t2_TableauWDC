@@ -27,15 +27,15 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
         $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
-            var table = resp.table,
+            var dataSourceTable = resp.table,
                 tableData = [];
             
             // Iterate over the JSON object
-            for (var i = 0 ; i < table.length; i++) {
+            for (var i = 0 ; i < dataSourceTable.length; i++) {
                 tableData.push({
-                    "batch_id": table[i]["batch_id"],
-                    "id": table[i]["id"],
-                    "Operation": table[i]["Operation"]
+                    "batch_id": dataSourceTable[i]["batch_id"],
+                    "id": dataSourceTable[i]["id"],
+                    "Operation": dataSourceTable[i]["Operation"]
                 });
             }
 
