@@ -31,7 +31,7 @@
                 tableData = [],
                 length = table.length;
             console log(length);
-            console log("respon is okay")
+            console log("respon is okay");
             console log(table);
             
             // Iterate over the JSON object
