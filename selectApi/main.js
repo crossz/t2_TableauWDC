@@ -6,7 +6,7 @@ console.log("start 1");
         $("#submitButton").click(function() {
             console.log("It is working!");
             var userChoice = document.getElementById("dropDownListForApi").value;
-            console.log(userChoice)
+            console.log(userChoice);
             app1();
         });
     });
