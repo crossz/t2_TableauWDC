@@ -48,8 +48,8 @@ function app1()  {
             doneCallback();
         });
     };
-
     tableau.registerConnector(myConnector);
+
     tableau.connectionName = "T_qPCRRepeatCase"; // This will be the data source name in Tableau
     tableau.submit(); // This sends the connector object to Tableau
 
