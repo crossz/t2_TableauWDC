@@ -1,4 +1,6 @@
+
 // Create event listeners for when the user submits the form
+console.log("start 1")
 $(document).ready(function() {
     $("#submitButton").click(function() {
         console.log("It is working!");
@@ -7,3 +9,4 @@ $(document).ready(function() {
         app1();
     });
 });
+console.log("start 2")

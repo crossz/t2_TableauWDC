@@ -1,4 +1,7 @@
-(function app1 () {
+console.log("start");
+function app1()  {
+    console.log("mid");
+
     // Create the connector object
     var myConnector = tableau.makeConnector();
 
@@ -53,4 +56,6 @@
     tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
     tableau.submit(); // This sends the connector object to Tableau
 
-})();
+};
+console.log("end");
+
