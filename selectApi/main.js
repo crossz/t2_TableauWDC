@@ -55,8 +55,12 @@
     $(document).ready(function() {
         $("#submitButton").click(function() {
             console.log("It is working!");
-            tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
-            tableau.submit(); // This sends the connector object to Tableau
+            if (userChoice == "qPCR Repeat Case"){
+                tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
+                tableau.submit(); // This sends the connector object to Tableau
+            }else {
+                console.log("It is False"); 
+            }
         });
     });
     
