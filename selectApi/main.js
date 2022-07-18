@@ -1,16 +1,63 @@
+(function() {
+    // Create the connector object
+    var myConnector = tableau.makeConnector();
 
-// Create event listeners for when the user submits the form
-console.log("start 1");
-var myConnector = tableau.makeConnector();
+    // Define the schema
+    
+    myConnector.getSchema = function(schemaCallback) {
+        var cols = [{
+            id: "Master_Lab_ID",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "approval_time",
+            dataType: tableau.dataTypeEnum.datetime
+        }, {
+            id: "is_qPCR",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "is_repeat",
+            dataType: tableau.dataTypeEnum.string
+        }];
 
-(function (){
+        var tableSchema = {
+            id: "qPCRRepeatCaseSchema",
+            alias: "Schemafor qPCR Repeat Case Dashboard",
+            columns: cols
+        };
+
+        schemaCallback([tableSchema]);
+    };
+
+  
+    // Download the data
+    myConnector.getData = function(table, doneCallback) {
+
+        $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
+            var dataSourceTable = resp.table,
+                tableData = [];
+            
+            // Iterate over the JSON object
+            for (var i = 0 ; i < dataSourceTable.length; i++) {
+                tableData.push({
+                    "Master_Lab_ID": dataSourceTable[i]["Master_Lab_ID"],
+                    "approval_time": dataSourceTable[i]["approval_time"],
+                    "is_qPCR": dataSourceTable[i]["is_qPCR"],
+                    "is_repeat": dataSourceTable[i]["is_repeat"]
+                });
+            }
+
+            table.appendRows(tableData);
+            doneCallback();
+        });
+    };
+    tableau.registerConnector(myConnector);
+
+    
     $(document).ready(function() {
         $("#submitButton").click(function() {
             console.log("It is working!");
-            var userChoice = document.getElementById("dropDownListForApi").value;
-            console.log(userChoice);
-            app1(myConnector);
+            tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
+            tableau.submit(); // This sends the connector object to Tableau
         });
     });
 })();
-console.log("start 2");
