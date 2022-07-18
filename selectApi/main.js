@@ -52,12 +52,9 @@
     };
     tableau.registerConnector(myConnector);
 
+    console.log("It is working!");
+    tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
+    tableau.submit(); // This sends the connector object to Tableau
+        
     
-    $(document).ready(function() {
-        $("#submitButton").click(function() {
-            console.log("It is working!");
-            tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
-            tableau.submit(); // This sends the connector object to Tableau
-        });
-    });
 })();
