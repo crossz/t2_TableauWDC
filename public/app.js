@@ -1,8 +1,10 @@
 (function() {
     // Create the connector object
+    console.log("Event makeConnector");
     var myConnector = tableau.makeConnector();
 
     // Define the schema
+    console.log("Event getSchema");
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
             id: "Master_Lab_ID",
@@ -27,6 +29,7 @@
         schemaCallback([tableSchema]);
     };
 
+    console.log("getData");
     // Download the data
     myConnector.getData = function(table, doneCallback) {
         $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
@@ -47,10 +50,11 @@
             doneCallback();
         });
     };
-
+    console.log("registerConnector");
     tableau.registerConnector(myConnector);
 
     // Create event listeners for when the user submits the form
+    console.log("caller");
     $(document).ready(function() {
         $("#submitButton").click(function() {
             console.log("It is working!");
