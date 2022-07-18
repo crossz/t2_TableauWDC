@@ -1,6 +1,9 @@
 $(document).ready(function() {
     $("#submitButton").click(function() {
-        console.log("It is working!");
+        var userchoice =document.getElementById("dropDownListForApi");
+        
+        console.log("It is working!" );
+        console.log(userchoice);
     });
 });
 
