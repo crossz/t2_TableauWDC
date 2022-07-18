@@ -1,4 +1,4 @@
-(function() {
+function ngs() {
     // Create the connector object
     var myConnector = tableau.makeConnector();
 
@@ -52,15 +52,9 @@
     };
     tableau.registerConnector(myConnector);
 
-    $(document).ready(function() {
-        $("#submitButton").click(function() {
-            console.log("It is working! A");
-            let userChoice = document.getElementById("dropDownListForApi").value;
-            if (userChoice == "NGS Repeat Case"){
-                tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
-                tableau.submit(); // This sends the connector object to Tableau
-            }
-        });
-    });
+
+    tableau.connectionName = "NGSRepeatCase"; // This will be the data source name in Tableau
+        tableau.submit(); // This sends the connector object to Tableau
+
     
-})();
+};

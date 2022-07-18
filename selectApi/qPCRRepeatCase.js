@@ -1,4 +1,4 @@
-(function() {
+function qPCR() {
     // Create the connector object
     var myConnector = tableau.makeConnector();
 
@@ -52,15 +52,7 @@
     };
     tableau.registerConnector(myConnector);
 
-    $(document).ready(function() {
-        $("#submitButton").click(function() {
-            console.log("It is working!");
-            let userChoice = document.getElementById("dropDownListForApi").value;
-            if (userChoice == "qPCR Repeat Case"){
-                tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
-                tableau.submit(); // This sends the connector object to Tableau
-            }
-        });
-    });
+    tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
+    tableau.submit(); // This sends the connector object to Tableau
     
-})();
+};
