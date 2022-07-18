@@ -1,11 +1,13 @@
 (function() {
     // Create the connector object
-    console.log("Event makeConnector");
     var myConnector = tableau.makeConnector();
+    console.log("makeConnector");
 
     // Define the schema
-    console.log("Event getSchema");
+    
     myConnector.getSchema = function(schemaCallback) {
+        /////////////////////////////////////////
+        console.log("Event getSchema");
         var cols = [{
             id: "Master_Lab_ID",
             dataType: tableau.dataTypeEnum.string
@@ -29,9 +31,11 @@
         schemaCallback([tableSchema]);
     };
 
-    console.log("getData");
+  
     // Download the data
     myConnector.getData = function(table, doneCallback) {
+        /////////////////////////////////////////
+        console.log("getData");
         $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
             var dataSourceTable = resp.table,
                 tableData = [];
@@ -50,13 +54,15 @@
             doneCallback();
         });
     };
-    console.log("registerConnector");
     tableau.registerConnector(myConnector);
+    console.log("registerConnector");
 
     // Create event listeners for when the user submits the form
-    console.log("caller");
+    
     $(document).ready(function() {
         $("#submitButton").click(function() {
+            //////////////////////
+            console.log("caller");
             console.log("It is working!");
             tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
