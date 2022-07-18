@@ -1,4 +1,4 @@
-(function() {
+(function app1 () {
     // Create the connector object
     var myConnector = tableau.makeConnector();
 
@@ -49,13 +49,8 @@
     };
 
     tableau.registerConnector(myConnector);
+    console.log("Tableau WDC is working!");
+    tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
+    tableau.submit(); // This sends the connector object to Tableau
 
-    // Create event listeners for when the user submits the form
-    $(document).ready(function() {
-        $("#submitButton").click(function() {
-            console.log("It is working!");
-            tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
-            tableau.submit(); // This sends the connector object to Tableau
-        });
-    });
 })();
