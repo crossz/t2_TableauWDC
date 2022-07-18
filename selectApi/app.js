@@ -1,9 +1,7 @@
 $(document).ready(function() {
     $("#submitButton").click(function() {
-        var userchoice =document.getElementById("dropDownListForApi");
-        
-        console.log("It is working!" );
-        console.log(userchoice);
+        var userChoice = document.getElementById("dropDownListForApi").value;
+        console.log(userChoice);
     });
 });
 
