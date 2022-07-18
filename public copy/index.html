@@ -8,7 +8,7 @@
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
     
     <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
-    <script src="app.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -16,7 +16,25 @@
          <h2 class="header"> Import Data Into Tableau Dashboard </h2> 
     </header>
     <main>
-        <div class = "userInput"> <button type = "button" id = "submitButton" class = "btn btn-success" style = "margin: 10px;">Get Data!</button> </div>
+        <div class = "userInput"> 
+            <div class = "userInput"> 
+                <select id = "dropDownListForApi">
+                    <option value =-1> Select a data source</option>
+                    <optgroup label="Lab P0 Dashboard">
+                        <option value="qPCR Repeat Case">qPCR Repeat Case</option>
+                        <option value="NGS Repeat Case">NGS Repeat Case</option>
+                        <option value="TAT Overview and By TAT">TAT Overview and By TAT</option>
+                        <option value="NGS Positive and qPCR Positive"> NGS Positive and qPCR Positive</option>
+                    </optgroup>
+                    <optgroup label="CS P0 Dashboard">
+                        <option value="By TAT">By TAT </option>
+                        <option value="By Risk Factor">By Risk Factor </option>
+                        <option value="TAT Achieve Rate">TAT Achieve Rate </option>
+                    </optgroup>
+                </select>
+            <button type = "button" id = "submitButton" class = "btn btn-success" style = "margin: 10px;">Get Data!</button> 
+        </div>
     </main>
+    <script src="app.js" type="text/javascript"></script>
 </body>
 </html>

@@ -52,10 +52,18 @@
     };
     tableau.registerConnector(myConnector);
 
+    const optionElement = document.getElementById("dropDownListForApi");
+    optionElement.addEventListener("click",function countryShow(){
+        let userChoice = document.getElementById("dropDownListForApi").value;
+        console.log("Great");
+        console.log(userChoice);
+    });
+
+
     
+
     $(document).ready(function() {
         $("#submitButton").click(function() {
-            console.log("It is working!");
             tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
