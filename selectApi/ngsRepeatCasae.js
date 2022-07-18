@@ -1,4 +1,4 @@
-function ngs() {
+(function() {
     // Create the connector object
     var myConnector = tableau.makeConnector();
 
@@ -52,9 +52,11 @@ function ngs() {
     };
     tableau.registerConnector(myConnector);
 
-
-    tableau.connectionName = "NGSRepeatCase"; // This will be the data source name in Tableau
-        tableau.submit(); // This sends the connector object to Tableau
-
-    
-};
+    $(document).ready(function() {
+        $("#NGSRepaetCase_submitButton").click(function() {
+            console.log("It is working! A");
+            tableau.connectionName = "NGSRepeatCase"; // This will be the data source name in Tableau
+            tableau.submit(); // This sends the connector object to Tableau
+        });
+    });
+})();

@@ -1,4 +1,4 @@
-function qPCR() {
+(function () {
     // Create the connector object
     var myConnector = tableau.makeConnector();
 
@@ -52,7 +52,10 @@ function qPCR() {
     };
     tableau.registerConnector(myConnector);
 
-    tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
-    tableau.submit(); // This sends the connector object to Tableau
-    
-};
+    $(document).ready(function() {
+        $("#qPCRRepaetCase_submitButton").click(function() {
+            tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
+            tableau.submit(); // This sends the connector object to Tableau
+        });
+    });
+})();
