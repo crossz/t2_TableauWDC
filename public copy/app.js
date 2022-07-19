@@ -1,4 +1,7 @@
-(function() {
+(function(){
+    
+    const optionElement = document.getElementById("dropDownListForApi");
+    optionElement.addEventListener("click",function app(){
         // Create the connector object
         var myConnector = tableau.makeConnector();
 
@@ -31,7 +34,6 @@
     
         // Download the data
         myConnector.getData = function(table, doneCallback) {
-
             $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
                 var dataSourceTable = resp.table,
                     tableData = [];
@@ -48,11 +50,9 @@
 
                 table.appendRows(tableData);
                 doneCallback();
-            
+            });
         };
             tableau.registerConnector(myConnector);
-
-
 
 
 
@@ -62,5 +62,5 @@
                 tableau.submit(); // This sends the connector object to Tableau
             });
         });
-    
+    })
 })();
