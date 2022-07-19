@@ -1,4 +1,10 @@
-function app(myConnector){
+(function(){
+    
+    const optionElement = document.getElementById("dropDownListForApi");
+    optionElement.addEventListener("click",function app(){
+        // Create the connector object
+        var myConnector = tableau.makeConnector();
+
         // Define the schema
         
         myConnector.getSchema = function(schemaCallback) {
@@ -48,10 +54,13 @@ function app(myConnector){
         };
             tableau.registerConnector(myConnector);
 
+
+
         $(document).ready(function() {
             $("#submitButton").click(function() {
                 tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
                 tableau.submit(); // This sends the connector object to Tableau
             });
         });
-};
+    })
+})();
