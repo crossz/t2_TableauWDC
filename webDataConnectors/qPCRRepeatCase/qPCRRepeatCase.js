@@ -21,7 +21,7 @@
 
         var tableSchema = {
             id: "qPCRRepeatCaseSchema",
-            alias: "Schemafor qPCR Repeat Case Dashboard",
+            alias: "Schema for qPCR Repeat Case Dashboard",
             columns: cols
         };
 
