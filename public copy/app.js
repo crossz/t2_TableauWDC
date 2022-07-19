@@ -54,8 +54,6 @@
         };
             tableau.registerConnector(myConnector);
 
-
-
         $(document).ready(function() {
             $("#submitButton").click(function() {
                 tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
