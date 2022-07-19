@@ -35,8 +35,8 @@
         }];
 
         var tableSchema = {
-            id: "qPCRRepeatCaseSchema",
-            alias: "Schema for Tat Dashboard",
+            id: "tatOverview_and_byTAT",
+            alias: "Schema for TAT Overview and By TAT Dashboard",
             columns: cols
         };
 
@@ -55,11 +55,17 @@
             for (var i = 0 ; i < dataSourceTable.length; i++) {
                 tableData.push({
                     "Master_Lab_ID": dataSourceTable[i]["Master_Lab_ID"],
-                    "approval_time": dataSourceTable[i]["approval_time"],
-                    "is_qPCR": dataSourceTable[i]["is_qPCR"],
-                    "is_repeat": dataSourceTable[i]["is_repeat"]
+                    "clinic_call_time": dataSourceTable[i]["clinic_call_time"],
+                    "report_delivery_time": dataSourceTable[i]["report_delivery_time"],
+                    "specimen_accessioning_time": dataSourceTable[i]["specimen_accessioning_time"],
+                    "v01_report_signoff_time": dataSourceTable[i]["v01_report_signoff_time"],
+                    "end_process": dataSourceTable[i]["end_process"],
+                    "doctor_perceived_TAT": dataSourceTable[i]["doctor_perceived_TAT"],
+                    "patient_perceived_TAT": dataSourceTable[i]["patient_perceived_TAT"],
+                    "internal_TAT": dataSourceTable[i]["internal_TAT"]
                 });
             }
+
 
             table.appendRows(tableData);
             doneCallback();
@@ -71,7 +77,7 @@
     $(document).ready(function() {
         $("#submitButton").click(function() {
             console.log("It is working!");
-            tableau.connectionName = "qPCRRepeatCase"; // This will be the data source name in Tableau
+            tableau.connectionName = "tatOverview_and_byTAT"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });

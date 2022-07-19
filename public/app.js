@@ -3,7 +3,6 @@
     var myConnector = tableau.makeConnector();
 
     // Define the schema
-    
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
             id: "Master_Lab_ID",
