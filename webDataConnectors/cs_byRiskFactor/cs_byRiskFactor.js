@@ -16,13 +16,13 @@
             dataType: tableau.dataTypeEnum.string
         },  {
             id: "current_symptoms",
-            dataType: tableau.dataTypeEnum.int
+            dataType: tableau.dataTypeEnum.string
         }, {
             id: "family_history_of_npc",
-            dataType: tableau.dataTypeEnum.int
+            dataType: tableau.dataTypeEnum.string
         }, {
             id: "previous_npc_scree",
-            dataType: tableau.dataTypeEnum.int
+            dataType: tableau.dataTypeEnum.string
         }];
 
         var tableSchema = {
