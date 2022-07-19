@@ -32,7 +32,7 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
 
-        $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
+        $.getJSON("https://take2healthdataextractionapi.herokuapp.com/labP0Dashboard/qPCRRepeatCase", function(resp) {
             var dataSourceTable = resp.table,
                 tableData = [];
             
