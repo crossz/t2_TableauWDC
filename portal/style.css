@@ -8,3 +8,14 @@
     text-align: center;
     margin: 10px;
 }
+
+.copyButton{
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #1D76DA;
+    color: white;
+}
+
+#url{
+    width: 200;
+}

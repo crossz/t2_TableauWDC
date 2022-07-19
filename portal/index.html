@@ -1,35 +1,33 @@
 <html>
 <head>
-    <title>Import data into Tabelau</title>
+    <title>Tableau WebDataConnector Portal</title>
     <meta http-equiv="Cache-Control" content="no-store" />
     
     <link href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
     
     <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
-    
-    <!--<script src="app.js" type="text/javascript"></script>-->
-    <script src="ngsRepeatCasae.js" type="text/javascript"></script>
-    <script src="qPCRRepeatCase.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
     
 </head>
-
 <body>
     <header>
         <h2 class="header"> 
             <img src="Resource/Take2logo.png">
-            <span> Import Data Into Tableau Dashboard </span>
+            <span> Tablea Web Data Connectors  </span>
         </h2> 
     </header>
     <main>
         <div class = "userInput"> 
             <div> 
-                <label for="qPCRRepaetCase_submitButton">qPCR Repeat Case: </label>
-                <button type = "button" id = "qPCRRepaetCase_submitButton" class = "btn btn-success" style = "margin: 10px;">Get Data!</button> 
+                <label for="copyUrl_qPCRRepaetCase">qPCR Repeat Case: </label>
+                <input type="text" id="url_qPCRRepaetCase" placeholder="https://peterng2333.github.io/TableauWDC/webDataConnectors/qPCRRepeatCase/">
+                <button type = "button" id = "copyUrl_qPCRRepaetCase" class= "copyButton" onclick="copyEvent('url_qPCRRepaetCase')">copy</button> 
             </div>
             <div>
-                <label for="NGSRepaetCase_submitButton">NGS Repeat Case: </label>
-                <button type = "button" id = "NGSRepaetCase_submitButton" class = "btn btn-success" style = "margin: 10px;">Get Data!</button> 
+                <label for="copyUrl_ngsRepaetCase">NGS Repeat Case: </label>
+                <input type="text" id="url_ngsRepaetCase" placeholder="https://peterng2333.github.io/TableauWDC/webDataConnectors/ngsRepeatCase/">
+                <button type = "button" id = "copyUrl_ngsRepaetCase" class = "copyButton" onclick="copyEvent('url_ngsRepaetCase')">copy</button> 
             </div>
         </div>
     </main>
