@@ -1,10 +1,4 @@
-(function(){
-    
-    const optionElement = document.getElementById("dropDownListForApi");
-    optionElement.addEventListener("click",function app(){
-        // Create the connector object
-        var myConnector = tableau.makeConnector();
-
+function app(myConnector){
         // Define the schema
         
         myConnector.getSchema = function(schemaCallback) {
@@ -60,5 +54,4 @@
                 tableau.submit(); // This sends the connector object to Tableau
             });
         });
-    })
-})();
+};
