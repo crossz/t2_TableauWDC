@@ -48,21 +48,21 @@
     myConnector.getData = function(table, doneCallback) {
 
         $.getJSON("https://take2healthdataextractionapi.herokuapp.com/labP0Dashboard/tat", function(resp) {
-            var dataSourceTable = resp.table,
+            var dataSource = resp.table,
                 tableData = [];
             
             // Iterate over the JSON object
-            for (var i = 0 ; i < dataSourceTable.length; i++) {
+            for (var i = 0 ; i < dataSource.length; i++) {
                 tableData.push({
-                    "Master_Lab_ID": dataSourceTable[i]["Master_Lab_ID"],
-                    "clinic_call_time": dataSourceTable[i]["clinic_call_time"],
-                    "report_delivery_time": dataSourceTable[i]["report_delivery_time"],
-                    "specimen_accessioning_time": dataSourceTable[i]["specimen_accessioning_time"],
-                    "v01_report_signoff_time": dataSourceTable[i]["v01_report_signoff_time"],
-                    "end_process": dataSourceTable[i]["end_process"],
-                    "doctor_perceived_TAT": dataSourceTable[i]["doctor_perceived_TAT"],
-                    "patient_perceived_TAT": dataSourceTable[i]["patient_perceived_TAT"],
-                    "internal_TAT": dataSourceTable[i]["internal_TAT"]
+                    "Master_Lab_ID": dataSource[i]["Master_Lab_ID"],
+                    "clinic_call_time": dataSource[i]["clinic_call_time"],
+                    "report_delivery_time": dataSource[i]["report_delivery_time"],
+                    "specimen_accessioning_time": dataSource[i]["specimen_accessioning_time"],
+                    "v01_report_signoff_time": dataSource[i]["v01_report_signoff_time"],
+                    "end_process": dataSource[i]["end_process"],
+                    "doctor_perceived_TAT": dataSource[i]["doctor_perceived_TAT"],
+                    "patient_perceived_TAT": dataSource[i]["patient_perceived_TAT"],
+                    "internal_TAT": dataSource[i]["internal_TAT"]
                 });
             }
 

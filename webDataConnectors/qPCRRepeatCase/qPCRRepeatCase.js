@@ -33,16 +33,16 @@
     myConnector.getData = function(table, doneCallback) {
 
         $.getJSON("https://take2healthdataextractionapi.herokuapp.com/labP0Dashboard/qPCRRepeatCase", function(resp) {
-            var dataSourceTable = resp.table,
+            var dataSource = resp.table,
                 tableData = [];
             
             // Iterate over the JSON object
-            for (var i = 0 ; i < dataSourceTable.length; i++) {
+            for (var i = 0 ; i < dataSource.length; i++) {
                 tableData.push({
-                    "Master_Lab_ID": dataSourceTable[i]["Master_Lab_ID"],
-                    "approval_time": dataSourceTable[i]["approval_time"],
-                    "is_qPCR": dataSourceTable[i]["is_qPCR"],
-                    "is_repeat": dataSourceTable[i]["is_repeat"]
+                    "Master_Lab_ID": dataSource[i]["Master_Lab_ID"],
+                    "approval_time": dataSource[i]["approval_time"],
+                    "is_qPCR": dataSource[i]["is_qPCR"],
+                    "is_repeat": dataSource[i]["is_repeat"]
                 });
             }
 
