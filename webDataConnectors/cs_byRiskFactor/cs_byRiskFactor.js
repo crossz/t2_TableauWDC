@@ -152,6 +152,12 @@
         }, {
             id: "previous_npc_screen_opt_9",
              dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "previous_npc_screen_opt_10",
+             dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "previous_npc_screen_opt_11",
+             dataType: tableau.dataTypeEnum.string
         }];
 
         var tableSchema = {
@@ -222,7 +228,9 @@
                     "previous_npc_screen_opt_6": dataSource[i]["previous_npc_screen_opt_6"],
                     "previous_npc_screen_opt_7": dataSource[i]["previous_npc_screen_opt_7"],
                     "previous_npc_screen_opt_8": dataSource[i]["previous_npc_screen_opt_8"],
-                    "previous_npc_screen_opt_9": dataSource[i]["previous_npc_screen_opt_9"]
+                    "previous_npc_screen_opt_9": dataSource[i]["previous_npc_screen_opt_9"],
+                    "previous_npc_screen_opt_10": dataSource[i]["previous_npc_screen_opt_10"],
+                    "previous_npc_screen_opt_11": dataSource[i]["previous_npc_screen_opt_11"]
                 });
             }
 
