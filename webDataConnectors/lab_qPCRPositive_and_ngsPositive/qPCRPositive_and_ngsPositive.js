@@ -9,6 +9,9 @@
             id: "Master_Lab_ID",
             dataType: tableau.dataTypeEnum.string
         }, {
+            id: "specimen_accessioning_time",
+            dataType: tableau.dataTypeEnum.datetime
+        }, {
             id: "v01_report_sign_off_time",
             dataType: tableau.dataTypeEnum.datetime
         }, {
@@ -52,6 +55,7 @@
             for (var i = 0 ; i < dataSource.length; i++) {
                 tableData.push({
                     "Master_Lab_ID": dataSource[i]["Master_Lab_ID"],
+                    "specimen_accessioning_time": dataSource[i]["specimen_accessioning_time"],
                     "v01_report_sign_off_time": dataSource[i]["v01_report_sign_off_time"],
                     "is_v01_report_result_authorized": dataSource[i]["is_v01_report_result_authorized"],
                     "is_v02_report_result_authorized": dataSource[i]["is_v02_report_result_authorized"],

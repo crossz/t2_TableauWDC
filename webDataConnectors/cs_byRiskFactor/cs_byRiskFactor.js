@@ -9,6 +9,9 @@
             id: "Master_Lab_ID",
             dataType: tableau.dataTypeEnum.string
         }, {
+            id: "specimen_accessioning_time",
+            dataType: tableau.dataTypeEnum.datetime
+        }, {
             id: "trf_verification_time",
             dataType: tableau.dataTypeEnum.datetime
         }, {
@@ -46,8 +49,9 @@
             for (var i = 0 ; i < dataSource.length; i++) {
                 tableData.push({
                     "Master_Lab_ID": dataSource[i]["Master_Lab_ID"],
-                    "current_smoker": dataSource[i]["current_smoker"],
+                    "specimen_accessioning_time": dataSource[i]["specimen_accessioning_time"],
                     "trf_verification_time": dataSource[i]["trf_verification_time"],
+                    "current_smoker": dataSource[i]["current_smoker"],
                     "current_symptoms": dataSource[i]["current_symptoms"],
                     "family_history_of_npc": dataSource[i]["family_history_of_npc"],
                     "previous_npc_scree": dataSource[i]["previous_npc_scree"]

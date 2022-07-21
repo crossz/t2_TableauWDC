@@ -9,6 +9,9 @@
             id: "Master_Lab_ID",
             dataType: tableau.dataTypeEnum.string
         }, {
+            id: "specimen_accessioning_time",
+            dataType: tableau.dataTypeEnum.datetime
+        },  {
             id: "approval_time",
             dataType: tableau.dataTypeEnum.datetime
         }, {
@@ -40,6 +43,7 @@
             for (var i = 0 ; i < dataSource.length; i++) {
                 tableData.push({
                     "Master_Lab_ID": dataSource[i]["Master_Lab_ID"],
+                    "specimen_accessioning_time": dataSource[i]["specimen_accessioning_time"],
                     "approval_time": dataSource[i]["approval_time"],
                     "is_NGS": dataSource[i]["is_NGS"],
                     "is_repeat": dataSource[i]["is_repeat"]
