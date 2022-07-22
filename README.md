@@ -16,7 +16,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 ## public 文件夾
   - 這個主要是測試用的Web資料連接器，裏面有對JavaScript代碼的一點備註
 ### webDataConnectors 文件夾
-  - 這個主要存放了所有Web資料連接器的文件夾，由於每個有Web資料連接器的結構都很相似，所以這裏面的Web資料連接器都没有太多備註
+  - 這個主要存放了所有Web資料連接器的文件夾，由於每個Web資料連接器的結構都很相似，所以這裏面的Web資料連接器都没有太多備註
 
 
 ```
