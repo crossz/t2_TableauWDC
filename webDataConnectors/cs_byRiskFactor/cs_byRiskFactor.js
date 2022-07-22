@@ -15,16 +15,7 @@
             id: "trf_verification_time",
             dataType: tableau.dataTypeEnum.datetime
         }, {
-            id: "current_smoker_opt_0",
-             dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "current_smoker_opt_1",
-             dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "current_smoker_opt_2",
-             dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "current_smoker_opt_3",
+            id: "current_smoker",
              dataType: tableau.dataTypeEnum.string
         }, {
             id: "current_symptoms_opt_0",
@@ -160,6 +151,7 @@
              dataType: tableau.dataTypeEnum.string
         }];
 
+        
         var tableSchema = {
             id: "byRiskFactor",
             alias: "Schema for By Risk Factor",
@@ -183,10 +175,7 @@
                     "Master_Lab_ID": dataSource[i]["Master_Lab_ID"],
                     "specimen_accessioning_time": dataSource[i]["specimen_accessioning_time"],
                     "trf_verification_time": dataSource[i]["trf_verification_time"],
-                    "current_smoker_opt_0": dataSource[i]["current_smoker_opt_0"],
-                    "current_smoker_opt_1": dataSource[i]["current_smoker_opt_1"],
-                    "current_smoker_opt_2": dataSource[i]["current_smoker_opt_2"],
-                    "current_smoker_opt_3": dataSource[i]["current_smoker_opt_3"],
+                    "current_smoker": dataSource[i]["current_smoker"],
                     "current_symptoms_opt_0": dataSource[i]["current_symptoms_opt_0"],
                     "current_symptoms_opt_1": dataSource[i]["current_symptoms_opt_1"],
                     "current_symptoms_opt_2": dataSource[i]["current_symptoms_opt_2"],
