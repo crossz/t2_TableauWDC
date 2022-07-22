@@ -1,9 +1,12 @@
+// WDC文檔：https://tableau.github.io/webdataconnector/docs/wdc_tutorial.html
+
 (function() {
     // Create the connector object
     var myConnector = tableau.makeConnector();
 
-    // Define the schema
+    // Define the schema 
     myConnector.getSchema = function(schemaCallback) {
+        // 定義在tableau裏的Columns名稱和數據類型
         var cols = [{
             id: "Master_Lab_ID",
             dataType: tableau.dataTypeEnum.string
@@ -20,7 +23,7 @@
 
         var tableSchema = {
             id: "qPCRRepeatCaseSchema",
-            alias: "Schemafor qPCR Repeat Case Dashboard",
+            alias: "Schema for qPCR Repeat Case Dashboard",
             columns: cols
         };
 
@@ -28,14 +31,14 @@
     };
 
   
-    // Download the data
+    // Download the data (從API中取得相應的數據)
     myConnector.getData = function(table, doneCallback) {
 
         $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
             var dataSourceTable = resp.table,
                 tableData = [];
             
-            // Iterate over the JSON object
+            // Iterate over the JSON object 
             for (var i = 0 ; i < dataSourceTable.length; i++) {
                 tableData.push({
                     "Master_Lab_ID": dataSourceTable[i]["Master_Lab_ID"],
@@ -49,9 +52,10 @@
             doneCallback();
         });
     };
+
     tableau.registerConnector(myConnector);
 
-    
+    // When the [get data] button is clicked 
     $(document).ready(function() {
         $("#submitButton").click(function() {
             console.log("It is working!");
