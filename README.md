@@ -9,14 +9,15 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
+程序說明：Tableau用戶可以通過Web資料連接器連接並取得的資料，Web 資料連接器是一個包含 JavaScript 代碼的 HTML 檔案，目前每一個Web 資料連接器都放在一個文件夾
 
-# Header 1
-## Header 2
-### Header 3
+# Portal 文件夾 
+  - 這個主要是讓用戶取得不同資料連接器URL的網頁，目前未能實現讓用戶統一在一個Web 資料連接器中，透過下接清單選擇目標API然後取得相應資料的功能，只能一個Web資料連接器對應一個API
+## public 文件夾
+  - 這個主要是測試用的Web資料連接器，裏面有對JavaScript代碼的一點備註
+### webDataConnectors 文件夾
+  - 這個主要存放了所有Web資料連接器的文件夾，
 
-- Bulleted
-- List
 
 1. Numbered
 2. List
