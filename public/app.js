@@ -34,7 +34,7 @@
     // Download the data (從API中取得相應的數據)
     myConnector.getData = function(table, doneCallback) {
 
-        $.getJSON("https://take2healthdataextractionapi.herokuapp.com/dataextraction", function(resp) {
+        $.getJSON("https://t2-lims-dashboard-testenv.herokuapp.com/dataextraction", function(resp) {
             var dataSourceTable = resp.table,
                 tableData = [];
             
