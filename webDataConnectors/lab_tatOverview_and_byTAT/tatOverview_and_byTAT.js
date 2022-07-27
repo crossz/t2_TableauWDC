@@ -47,7 +47,7 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
 
-        $.getJSON("https://take2healthdataextractionapi.herokuapp.com/labP0Dashboard/tat", function(resp) {
+        $.getJSON("https://t2-lims-dashboard-testenv.herokuapp.com/labP0Dashboard/tat", function(resp) {
             var dataSource = resp.table,
                 tableData = [];
             
